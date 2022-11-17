@@ -1,5 +1,4 @@
 import 'dart:html';
-
 import 'package:counter7/budget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +16,7 @@ class DrawerClass extends StatelessWidget {
           SizedBox(
             height: 30.0,
           ),
-          // Adding clickable menu
+
           ListTile(
             title: const Text('counter_7'),
             onTap: () {
@@ -48,7 +47,6 @@ class DrawerClass extends StatelessWidget {
           ListTile(
             title: const Text('Budget Data'),
             onTap: () {
-              // Routing the menu to the form page
               Navigator.of(context).pop();
               if (this.currentPage == 'Budget Data') return;
 

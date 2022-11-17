@@ -4,9 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:date_field/date_field.dart';
 import 'package:intl/intl.dart';
 import 'package:counter7/drawer.dart';
-
-// import 'package:syncfusion_flutter_datepicker/datepicker.dart';
-
 import 'main.dart';
 
 class AddBudgetPage extends StatefulWidget {
@@ -26,12 +23,9 @@ class _AddBudgetPageState extends State<AddBudgetPage> {
   DateTime datetime = DateTime.now();
   DateFormat dateFormat = DateFormat("yyyy-MM-dd HH:mm:ss");
   late final String dateString = dateFormat.format(datetime);
-
   TextEditingController dateInputController = TextEditingController();
-
   List<String> listJenis = ['Income', 'Expenses'];
   List<Object> listForm = [];
-
   List<List<Object>> _getList() {
     return list;
   }
@@ -83,7 +77,6 @@ class _AddBudgetPageState extends State<AddBudgetPage> {
                       });
                     },
 
-                    // Validator sebagai validasi form
                     validator: (String? value) {
                       if (value == null || value.isEmpty) {
                         return 'Title cannot be empty!';
@@ -112,13 +105,11 @@ class _AddBudgetPageState extends State<AddBudgetPage> {
                       });
                     },
 
-                    // Menambahkan behavior saat data disimpan
                     onSaved: (String? value) {
                       setState(() {
                         amount = int.parse(value!);
                       });
                     },
-                    // Validator sebagai validasi form
                     validator: (String? value) {
                       if (value == null || value.isEmpty) {
                         return 'Amount cannot be empty!';
@@ -153,7 +144,6 @@ class _AddBudgetPageState extends State<AddBudgetPage> {
                     );
                   }).toList(),
                   onChanged: (String? value) {
-                    // This is called when the user selects an item.
                     setState(() {
                       jenis = value!;
                     });
