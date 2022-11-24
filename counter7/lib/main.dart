@@ -1,9 +1,7 @@
 // Dhafiano Fadeyka Ghani Wiweko
 // 2106751631
 // PBP-E
-// Tugas 7
 
-import 'package:counter7/budget.dart';
 import 'package:flutter/material.dart';
 import 'package:counter7/drawer.dart';
 
@@ -29,7 +27,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.lightBlue,
       ),
       home: const MyHomePage(title: 'Program Counter'),
     );
@@ -56,8 +54,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  String ganjil = 'ganjil';
-  String genap = 'genap';
+  String genap = 'genap ';
+  String ganjil = 'ganjil ';
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -91,6 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // the App.build method, and use it to set our appbar title.
           title: Text(widget.title),
         ),
+        drawer: const MyDrawer(),
         body: Center(
           // Center is a layout widget. It takes a single child and positions it
           // in the middle of the parent.
@@ -113,11 +112,13 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               if (_counter % 2 == 0) ...[
                 const Text(
-                  'Genap',
+                  'GENAP',
+                  style: TextStyle(color: Color.fromARGB(255, 255, 0, 0)),
                 ),
               ] else ...[
                 const Text(
-                  'Ganjil',
+                  'GANJIL',
+                  style: TextStyle(color: Color.fromARGB(255, 255, 0, 0)),
                 ),
               ],
               Text(
@@ -132,17 +133,26 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                FloatingActionButton(
-                  onPressed: _decrementCounter,
-                  tooltip: 'Decrement',
-                  child: const Icon(Icons.remove),
-                ),
-                Expanded(child: Container()),
-                FloatingActionButton(
-                  onPressed: _incrementCounter,
-                  tooltip: 'Increment',
-                  child: const Icon(Icons.add),
-                ),
+                if (_counter == 0) ...{
+                  Expanded(child: Container()),
+                  FloatingActionButton(
+                    onPressed: _incrementCounter,
+                    tooltip: 'Increment',
+                    child: const Icon(Icons.add),
+                  ), // This trailing comma makes auto-formatting nicer for build methods.
+                } else ...{
+                  FloatingActionButton(
+                    onPressed: _decrementCounter,
+                    tooltip: 'Decrement',
+                    child: const Icon(Icons.remove),
+                  ), // This trailing comma makes auto-formatting nicer for build methods.
+                  Expanded(child: Container()),
+                  FloatingActionButton(
+                    onPressed: _incrementCounter,
+                    tooltip: 'Increment',
+                    child: const Icon(Icons.add),
+                  ), // This trailing comma makes auto-formatting nicer for build methods.
+                }
               ],
             )));
   }

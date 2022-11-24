@@ -1,60 +1,59 @@
-import 'dart:html';
 import 'package:counter7/budget.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:counter7/main.dart';
+import 'package:counter7/form.dart';
+import 'package:counter7/mywatch2list.dart';
 import 'package:flutter/material.dart';
-import 'main.dart';
 
-class DrawerClass extends StatelessWidget {
-  DrawerClass(this.currentPage);
-  final String currentPage;
+class MyDrawer extends StatelessWidget {
+  const MyDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: Column(
         children: [
-          SizedBox(
-            height: 30.0,
-          ),
-
           ListTile(
             title: const Text('counter_7'),
             onTap: () {
-              Navigator.of(context).pop();
-              if (this.currentPage == 'counter_7') return;
-
-              Navigator.pushReplacement(
+              Navigator.pop(context);
+              // Routing the menu to the main page
+              // Navigator.pushReplacement(
+              //   context,
+              //   MaterialPageRoute(builder: (context) => const MyHomePage()),
+              // );
+            },
+          ),
+          ListTile(
+        
+            title: const Text('Tambah Budget'),
+            onTap: () {
+              Navigator.pop(context);
+              // Routing the menu to the main page
+              Navigator.push(
                 context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        const MyHomePage(title: 'Program Counter')),
+                MaterialPageRoute(builder: (context) => const BudgetForm()),
               );
             },
           ),
           ListTile(
-            title: const Text('Add Budget'),
+            title: const Text('Data Budget'),
             onTap: () {
-              // Routing the menu to the form page
-              Navigator.of(context).pop();
-              if (this.currentPage == 'Add Budget Info') return;
-
-              Navigator.pushReplacement(
+              Navigator.pop(context);
+              // Routing the menu to the main page
+              Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => AddBudgetPage()),
+                MaterialPageRoute(builder: (context) => const Budget()),
               );
             },
           ),
           ListTile(
-            title: const Text('Budget Data'),
+            title: const Text('My Watch List'),
             onTap: () {
-              Navigator.of(context).pop();
-              if (this.currentPage == 'Budget Data') return;
-
-              Navigator.pushReplacement(
+              Navigator.pop(context);
+              // Route menu ke halaman form
+              Navigator.push(
                 context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        BudgetDataPage(list: AddBudgetPage.listData)),
+                MaterialPageRoute(builder: (context) => const Watchlist()),
               );
             },
           ),
