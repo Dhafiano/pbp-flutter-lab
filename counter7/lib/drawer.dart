@@ -28,7 +28,6 @@ class MyDrawer extends StatelessWidget {
             title: const Text('Tambah Budget'),
             onTap: () {
               Navigator.pop(context);
-              // Routing the menu to the main page
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const BudgetForm()),
@@ -39,7 +38,6 @@ class MyDrawer extends StatelessWidget {
             title: const Text('Data Budget'),
             onTap: () {
               Navigator.pop(context);
-              // Routing the menu to the main page
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const Budget()),
@@ -50,7 +48,6 @@ class MyDrawer extends StatelessWidget {
             title: const Text('My Watch List'),
             onTap: () {
               Navigator.pop(context);
-              // Route menu ke halaman form
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const Watchlist()),

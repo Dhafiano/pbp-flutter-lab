@@ -34,33 +34,27 @@ class _BudgetFormState extends State<BudgetForm> {
             padding: const EdgeInsets.all(20),
             child: Column(
               children: [
-                // Title
                 Padding(
-                  // Using padding of 8 pixels
                   padding: const EdgeInsets.all(8.0),
                   child: TextFormField(
                     controller: _titleController,
                     decoration: InputDecoration(
                       hintText: "Beli baso",
                       labelText: "Judul",
-                      // Added a circular border to make it neater
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5.0),
                       ),
                     ),
-                    // Added behavior when name is typed
                     onChanged: (String? value) {
                       setState(() {
                         _title = value!;
                       });
                     },
-                    // Added behavior when data is saved
                     onSaved: (String? value) {
                       setState(() {
                         _title = value!;
                       });
                     },
-                    // Validator as form validation
                     validator: (String? value) {
                       if (value == null || value.isEmpty) {
                         return 'Mohon isi judul!';
@@ -69,10 +63,7 @@ class _BudgetFormState extends State<BudgetForm> {
                     },
                   ),
                 ),
-
-                // Nominal
                 Padding(
-                  // Using padding of 8 pixels
                   padding: const EdgeInsets.all(8.0),
                   child: TextFormField(
                     controller: _nominalController,
@@ -82,24 +73,20 @@ class _BudgetFormState extends State<BudgetForm> {
                       hintText: "111111",
                       labelText: "Nominal",
                       prefix: const Text("Rp"),
-                      // Added a circular border to make it neater
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(5.0),
                       ),
                     ),
-                    // Added behavior when name is typed
                     onChanged: (String? value) {
                       setState(() {
                         _nominal = int.parse(value!);
                       });
                     },
-                    // Added behavior when data is saved
                     onSaved: (String? value) {
                       setState(() {
                         _nominal = int.parse(value!);
                       });
                     },
-                    // Validator as form validation
                     validator: (String? value) {
                       if (value == null || value.isEmpty) {
                         return 'Mohon isi nominal!';
@@ -109,16 +96,12 @@ class _BudgetFormState extends State<BudgetForm> {
                   ),
                 ),
 
-                // Date
                 Padding(
-                  // Using padding of 8 pixels
                   padding: const EdgeInsets.all(8.0),
                   
                 ),
 
-                // Dropdown
                 Padding(
-                  // Using padding of 8 pixels
                   padding: const EdgeInsets.all(8.0),
                   child: DropdownButtonFormField<String>(
                     value: _type,
@@ -135,7 +118,6 @@ class _BudgetFormState extends State<BudgetForm> {
                         child: Text(value),
                       );
                     }).toList(),
-                    // Validator as form validation
                     validator: (String? value) {
                       if (value == null || value.isEmpty) {
                         return 'Mohon isi jenis budget!';
@@ -171,7 +153,6 @@ class _BudgetFormState extends State<BudgetForm> {
                 action: SnackBarAction(
                   label: 'Hide',
                   onPressed: () {
-
                   },
                 ),
             );

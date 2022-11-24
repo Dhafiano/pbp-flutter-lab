@@ -9,7 +9,6 @@ class Budget extends StatefulWidget {
 }
 
 class _BudgetListState extends State<Budget> {
-
   List<Widget> getBudgetWidget() {
     List<Widget> list = <Widget>[];
     for (var element in data.listBudget) {

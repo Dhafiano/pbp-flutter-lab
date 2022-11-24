@@ -60,7 +60,7 @@ class _WatchlistState extends State<Watchlist> {
                 return Column(
                 children: const [
                     Text(
-                    "Tidak ada Watchlist",
+                    "No Watchlist",
                     style: TextStyle(
                         color: Color(0xff59A5D8),
                         fontSize: 20),
@@ -77,7 +77,6 @@ class _WatchlistState extends State<Watchlist> {
                           context, MaterialPageRoute(builder: (context) => WatchlistDetails(pk: snapshot.data[index].pk - 1,))
                         );
                       },
-                      
                       child: Container(
                         margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                         padding: const EdgeInsets.all(20.0),
@@ -104,8 +103,7 @@ class _WatchlistState extends State<Watchlist> {
                                 style: const TextStyle(
                                 fontSize: 18.0,
                                 fontWeight: FontWeight.bold,
-                                ),
-                                
+                                ), 
                             ),
                         ],
                         ),

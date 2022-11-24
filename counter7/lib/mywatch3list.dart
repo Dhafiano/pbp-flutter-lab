@@ -35,24 +35,6 @@ class _WatchlistDetailsState extends State<WatchlistDetails> {
           ),
           child: Row(
             children: [
-              // Expanded(
-              //   flex: 4,
-              //   child: ClipRRect(
-              //       borderRadius: BorderRadius.circular(10),
-              //       child: Hero(
-              //         tag: index.toString(),
-              //         child: CustomNetworkImage(
-              //           image: movieList[index].posterPath != null
-              //               ? movieList[index].posterPath!
-              //               : '',
-              //           height: 200,
-              //           width: double.infinity,
-              //         ),
-              //       )),
-              // ),
-              // const SizedBox(
-              //   width: 15,
-              // ),
               Expanded(
                 flex: 6,
                 child: Column(
@@ -66,7 +48,6 @@ class _WatchlistDetailsState extends State<WatchlistDetails> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                   
                     Text(
                       'Status: watched',
                       style: TextStyle(
